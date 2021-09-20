@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/general.css">
+    <script src="javascript/ListaPedidos.js"></script>
     <title>Lista de Pedidos</title>
 </head>
 <body>
-    <header class="w3-display-container w3-black w3-teal" style="height: 80px;">
+    <header class="w3-display-container w3-black w3-teal w3-responsive" style="height: 120px;">
             <h1 class="w3-display-middle">Cocina de Allison Thompson</h1>
             <img class="w3-display-right" src="img/logo.png" alt="logo" width="60" height="60">
     </header>
@@ -20,7 +21,29 @@
         <a href="crear_pedido.html" class="w3-bar-item w3-button w3-mobile">CREAR PEDIDO</a>
         <a href="lista_pedidos.html" class="w3-bar-item w3-button w3-mobile">LISTA DE PEDIDOS</a>
     </nav>
-    <main>
+    <main class="w3-sand">
+        <div class="w3-container w3-center w3-padding-16 w3-sand">
+            <h1>Lista de Pedidos</h1>
+        </div>
+        <div class="w3-responsive">
+            <table class="w3-table w3-bordered w3-xlarge w3-hoverable w3-centered w3-sand">
+                <thead>
+                    <tr class="w3-green"> 
+                        <th>Fecha</th>
+                        <th>Nombre</th>
+                        <th>Numero</th>
+                        <th>Mail</th>
+                        <th>Pedido</th>
+                        <th>Aclaraciones</th>
+                    </tr>
+                </thead>
+                <tbody id="TableContentPedidos">
+                </tbody>
+            </table>
+        </div>
+        <div class="w3-display-container w3-sand" style="height: 80px;">
+            <span></span>
+        </div>
     </main>
     <footer class="w3-container w3-teal w3-black w3-center">
         <a href="https://www.facebook.com/La-Cocina-de-Allison-Thompson-102969278285943" class="fa fa-facebook w3-xxxlarge w3-padding-16"></a>
