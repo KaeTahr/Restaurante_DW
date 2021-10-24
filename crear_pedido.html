@@ -21,16 +21,38 @@
         <a href="lista_pedidos.html" class="w3-bar-item w3-button w3-mobile">LISTA DE PEDIDOS</a>
     </nav>
     <main>
-        <div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
+        <div class="w3-container w3-padding-64 w3-sand w3-grayscale-min w3-xlarge">
         <div class="w3-content">
             <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Contact</h1>
             <p>Se puede contactar con nosotros con el número 15-122330</p>
-            <p class="w3-xxlarge"><strong>¡Ordene aquí!</strong></p>
-            <form action="/action_page.php" target="_blank">
-            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Nombre"></p>
-            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Detalles de la orden" required name="Message"></p>
-            <p><textarea class="w3-input w3-padding-16 w3-border" style="resize: none;" rows="8" columns="40">1 Hawaiina, y un 1 suprema sin aceitunas...</textarea>
-            <p><button class="w3-button w3-light-grey w3-block" type="submit">SEND MESSAGE</button></p>
+            <div class="w3-container w3-teal w3-center" >
+                <h2>¡Ordene aquí!</h2>
+            </div>
+            <form class="w3-container w3-card-4">
+                <p>
+                    <label for="Nombre"> <strong>Nombre:</strong> </label>
+                    <input class="w3-input w3-border " type="text" id="Nombre" placeholder="Nombre" required name="Nombre">
+                </p>
+                <p>
+                    <label for="Numero"> <strong>Numero:</strong> </label>
+                    <input class="w3-input w3-border " type="number" id="Numero" placeholder="8118.." required name="Numero">
+                </p>
+                <p>
+                    <label for="Email"> <strong>Email:</strong> </label>
+                    <input class="w3-input w3-border " type="email" id="Email" placeholder="user@gmail.com" required name="Email">
+                </p>
+                <p>
+                    <label for="Orden"> <strong>Orden:</strong> </label>
+                    <textarea class="w3-input w3-border" name="Orden" id="Orden" placeholder="1 Hawaiina, ..." required cols="30" rows="10"></textarea>
+                </p>
+                <p>
+                    <label for="Aclaraciones"> <strong>Aclaraciones:</strong> </label>
+                    <input class="w3-input w3-border " type="text" id="Aclaraciones" placeholder="Sin aceitunas.." required name="Aclaraciones">
+                </p>
+
+                <p>
+                    <button type="button" class="w3-btn w3-padding w3-teal w3-block"> <strong>Enviar!</strong></button>
+                </p>
             </form>
         </div>
         </div>
