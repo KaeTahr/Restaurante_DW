@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/general.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascript/CrearPedido.js"></script>
     <title>Crear Pedido</title>
 </head>
 <body>
@@ -28,7 +30,7 @@
             <div class="w3-container w3-teal w3-center" >
                 <h2>¡Ordene aquí!</h2>
             </div>
-            <form class="w3-container w3-card-4">
+            <form name="crearPedido" id="crearPedido" class="w3-container w3-card-4">
                 <p>
                     <label for="Nombre"> <strong>Nombre:</strong> </label>
                     <input class="w3-input w3-border" type="text" id="Nombre" placeholder="Nombre" required name="Nombre">
@@ -51,7 +53,7 @@
                 </p>
 
                 <p>
-                    <button type="button" class="w3-btn w3-padding w3-teal w3-block"> <strong>Enviar!</strong></button>
+                    <button type="button" id="boton" class="w3-btn w3-padding w3-teal w3-block"> <strong>Enviar!</strong></button>
                 </p>
             </form>
         </div>
