@@ -57,6 +57,7 @@
     }
     else {
         echo "Platillo agregado correctamente";
+        header("location:../modificar_platillos.php");
 
     }
 

@@ -51,14 +51,17 @@
                         $Descripcion[$n] = $row['descripcion'];
                         $Ingredientes[$n] = $row['ingredientes'];
                         $Imagen_path[$n] = $row['imagen_path'];
-                        echo "
+
+                    ?>
                         <tr>
-                            <td>$Id[$n]</td>
-                            <td>$Nombre[$n]</td>
-                            <td>$Descripcion[$n]</td>
-                            <td>$Ingredientes[$n]</td>
-                            <td><img src=\"$Imagen_path[$n]\"></td>
-                        ";
+                            <td><?php echo $Id[$n] ?></td>
+                            <td><?php echo $Nombre[$n] ?></td>
+                            <td><?php echo $Descripcion[$n] ?></td>
+                            <td><?php echo $Ingredientes[$n] ?></td>
+                            <td><img src="<?php $Imagen_path[$n] ?>"></td>
+                            <td><a href="php/edit_platillo.php?id=<?php echo $row['id']; ?>">Edit</a></td>
+                            <td><a href="php/delete_platillo.php?id=<?php echo $row['id']; ?>">Delete</a></td>
+                    <?php
                     }
                     ?>
                 </tbody>
