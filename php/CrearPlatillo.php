@@ -37,13 +37,13 @@
 	}
 
 	$platillo_image = $upFile;
-
+    $upFile = substr($platillo_image, 3);
     $nombre = $_POST["nombre"];
     $descripcion = $_POST["descripcion"];
     $ingredientes = $_POST["ingredientes"];
 
     $sql = "INSERT INTO platillos (nombre, descripcion, ingredientes, imagen_path)
-    VALUES ('$nombre', '$descripcion', '$ingredientes', '$platillo_image');";
+    VALUES ('$nombre', '$descripcion', '$ingredientes', '$upFile');";
 
     if (!consultaBD($sql)) {
         echo "Error en crear platillo;<br>";

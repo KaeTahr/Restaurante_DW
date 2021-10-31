@@ -25,7 +25,7 @@
             <table class="w3-table w3-bordered w3-xlarge w3-hoverable w3-centered w3-sand">
                 <thead>
                     <tr class="w3-black"> 
-                        <th>id</th>
+                        <th style= "display: none;">id</th>
                         <th>Nombre</th>
                         <th>Descripción</th>
                         <th>Ingredientes</th>
@@ -54,12 +54,12 @@
 
                     ?>
                         <tr>
-                            <td><?php echo $Id[$n] ?></td>
+                            <td style="display: none;"><?php echo $Id[$n] ?> </td>
                             <td><?php echo $Nombre[$n] ?></td>
                             <td><?php echo $Descripcion[$n] ?></td>
                             <td><?php echo $Ingredientes[$n] ?></td>
-                            <td><img src="<?php $Imagen_path[$n] ?>"></td>
-                            <td><a href="php/edit_platillo.php?id=<?php echo $row['id']; ?>">Edit</a></td>
+                            <td><img src="<?php echo $Imagen_path[$n] ?>" style="max-width:15%;"></td>
+                            <td><a href="edit_platillo_form.php?id=<?php echo $row['id']; ?>">Edit</a></td>
                             <td><a href="php/delete_platillo.php?id=<?php echo $row['id']; ?>">Delete</a></td>
                     <?php
                     }
@@ -72,7 +72,7 @@
         </div>
 
         <div class="form-popup" id="forma_platillo">
-            <form name="crearPlatillo" id="crearPlatillo" enctype="multipart/form-data" action="php/CrearPlatillo.php" class="form-container" method="post">
+            <form name="crearPlatillo" id="crearPlatillo" enctype="multipart/form-data" action="php/CrearPlatillo.php" class="form-container" method="post" autocomplete="off">
                 <h1>Platillo Nuevo</h1>
 
                 <label for="nombre"><b>Nombre</b></label>
