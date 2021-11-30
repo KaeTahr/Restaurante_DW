@@ -1,5 +1,5 @@
 function validateForm() {
-    const fields = ["Username", "Password"]
+    const fields = ["Username", "Password"];
     const forms = document.forms["login"];
     for (let i = 0; i < fields.length; i++) {
       if (forms[i].value === "") {
@@ -20,7 +20,7 @@ function enviar() {
 
 
     // Obtener entradas
-    const fields = ["Username", "Password"]
+    const fields = ["Username", "Password"];
     let ruta = "";
     for (let index = 0; index < fields.length; index++) {
         if (index > 0) {

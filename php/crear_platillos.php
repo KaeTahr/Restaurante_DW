@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/general.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../javascript/ListaPedidos.js"></script>
-    <title>Lista de Pedidos</title>
+    <script src="../javascript/CrearPlatillo.js"></script>
+    <title>Crear Platillo</title>
 </head>
 <body>
     <header class="w3-display-container w3-black w3-teal w3-responsive" style="height: 120px;">
@@ -34,26 +34,35 @@
 
     <main>
         <div class="w3-container w3-padding-64 w3-sand w3-grayscale-min w3-xlarge">
-            <div class="w3-container w3-center w3-padding-16 w3-sand">
-                <h1 class="w3-jumbo">Lista de Pedidos</h1>
+        <div class="w3-content">
+            <div class="w3-container w3-teal w3-center" >
+                <h2>Crear Platillo</h2>
             </div>
-            <div class="w3-responsive w3-padding-64">
-                <table class="w3-table w3-bordered w3-xlarge w3-hoverable w3-centered w3-sand">
-                    <thead>
-                        <tr class="w3-black"> 
-                            <th>Id</th>
-                            <th>Fecha</th>
-                            <th>Nombre</th>
-                            <th>Numero</th>
-                            <th>Mail</th>
-                            <th>Pedido</th>
-                            <th>Aclaraciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="TableContentPedidos">
-                    </tbody>
-                </table>
-            </div>
+            <form name="crearPlatillo" id="crearPlatillo" class="w3-container w3-card-4">
+                <p class="w3-container w3-center">
+                    <input class="w3-radio" type="radio" name="dia" value="5" checked>
+                    <label>Viernes</label>
+
+                    <input class="w3-radio w3-margin-left" type="radio" name="dia" value="6">
+                    <label>Sabado</label>
+                </p>
+                <p>
+                    <label for="nombre"> <strong>Nombre:</strong> </label>
+                    <input class="w3-input w3-border" type="text" id="nombre" placeholder="nombre" required name="nombre">
+                </p>
+                <p>
+                    <label for="descripcion"> <strong>Descripcion:</strong> </label>
+                    <input class="w3-input w3-border" type="text" id="descripcion" placeholder="descripcion" required name="descripcion">
+                </p>
+                <p>
+                    <label for="precio"> <strong>Precio:</strong> </label>
+                    <input class="w3-input w3-border" type="number" id="precio" placeholder="$100.00" required name="precio">
+                </p>
+                <p>
+                    <button type="button" id="boton" class="w3-btn w3-padding w3-teal w3-block"> <strong>Enviar!</strong></button>
+                </p>
+            </form>
+        </div>
         </div>
     </main>
 
