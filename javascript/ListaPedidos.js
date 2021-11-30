@@ -3,7 +3,7 @@ function CrearTabla(ruta) {
     // Enviar datos a la base de datos a traves de CrearPedido.php
     $.ajax(
         {
-            url: 'php/ListaPedido.php',
+            url: '../php/ListaPedido.php',
             type: 'POST',
             data: ruta,
         }
