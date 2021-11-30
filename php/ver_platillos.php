@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/general.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../javascript/ListaPedidos.js"></script>
-    <title>Lista de Pedidos</title>
+    <script src="../javascript/VerPlatillo.js"></script>
+    <title>Lista Platillos</title>
 </head>
 <body>
     <header class="w3-display-container w3-black w3-teal w3-responsive" style="height: 120px;">
@@ -34,22 +34,22 @@
     <main>
         <div class="w3-container w3-padding-64 w3-sand w3-grayscale-min w3-xlarge">
             <div class="w3-container w3-center w3-padding-16 w3-sand">
-                <h1 class="w3-jumbo">Lista de Pedidos</h1>
+                <h1 class="w3-jumbo">Lista de Platillos</h1>
             </div>
             <div class="w3-responsive w3-padding-64">
                 <table class="w3-table w3-bordered w3-xlarge w3-hoverable w3-centered w3-sand">
                     <thead>
                         <tr class="w3-black"> 
                             <th>Id</th>
-                            <th>Fecha</th>
+                            <th>Dia</th>
                             <th>Nombre</th>
-                            <th>Numero</th>
-                            <th>Mail</th>
-                            <th>Pedido</th>
-                            <th>Aclaraciones</th>
+                            <th>Descripcion</th>
+                            <th>Precio</th>
+                            <th>Image path</th>
+                            <th>Visible</th>
                         </tr>
                     </thead>
-                    <tbody id="TableContentPedidos">
+                    <tbody id="TableContentPlatillos">
                     </tbody>
                 </table>
             </div>
