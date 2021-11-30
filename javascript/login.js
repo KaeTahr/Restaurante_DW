@@ -1,15 +1,15 @@
 function validateForm() {
-  const fields = ["Nombre", "Numero", "Email", "Orden"]
-  const forms = document.forms["crearPedido"];
-  for (let i = 0; i < fields.length; i++) {
-    if (forms[i].value === "") {
-      alert(fields[i] + " no puede estar vacio");
-      return false;
+    const fields = ["Username", "Password"]
+    const forms = document.forms["login"];
+    for (let i = 0; i < fields.length; i++) {
+      if (forms[i].value === "") {
+        alert(fields[i] + " no puede estar vacio");
+        return false;
+      }
     }
-  }
-  return true;
+    return true;
 }
-
+  
 function enviar() {
     // Verificar que todos los campos esten completos.
     if (!validateForm()) {
@@ -20,7 +20,7 @@ function enviar() {
 
 
     // Obtener entradas
-    const fields = ["Nombre", "Numero", "Email", "Orden", "Aclaraciones"]
+    const fields = ["Username", "Password"]
     let ruta = "";
     for (let index = 0; index < fields.length; index++) {
         if (index > 0) {
@@ -29,21 +29,22 @@ function enviar() {
         ruta += fields[index] + "=" + document.getElementById(fields[index]).value;
     }
     
-    // Enviar datos a la base de datos a traves de CrearPedido.php
+    // Enviar datos a la base de datos a traves de CrearLogin.php
     $.ajax(
         {
-            url: 'php/CrearPedido.php',
+            url: '../php/CrearLogin.php',
             type: 'POST',
             data: ruta,
         }
     ).done(function(res) {
             alert(res);
+            window.location.href = "../php/lista_pedidos.php";
         }
     ).fail(function() {
-            console.log("No se pudo insertar la informacion");
+            console.log("No se pudo hacer login");
         }
     ).always(function() {
-            console.log("Se inserto la informacion correctamente");
+            console.log("Login ejecutado correctamente");
         }
     )
 
@@ -51,5 +52,5 @@ function enviar() {
 
 
 window.onload = function() {
-     document.getElementById("boton").onclick = enviar;
+    document.getElementById("boton").onclick = enviar;
 };

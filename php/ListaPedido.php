@@ -1,5 +1,9 @@
 <?php
-
+    session_start();
+    // Si no hay sesion iniciada regresar al login.
+    if(empty($_SESSION['login_user'])) {
+        header('Location: login.php');
+    }
     include('ConsultaBD.php');
 
     $sql = "SELECT Id, Fecha, Nombre, Numero, Mail, Pedido, Aclaraciones FROM pedidos ORDER BY FECHA DESC";

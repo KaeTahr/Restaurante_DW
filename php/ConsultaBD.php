@@ -1,5 +1,5 @@
 <?php
-  // son las configuraciones del servidor de la base de datos, Archivo: ConexionBD.php
+  	// Son las configuraciones del servidor de la base de datos, Archivo: ConexionBD.php
 	define("cServidor","localhost");
 	define("cUsuario","prueba");
 	define("cClave","password");
