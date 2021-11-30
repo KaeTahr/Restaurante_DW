@@ -1,5 +1,5 @@
 function validateForm() {
-  const fields = ["Nombre", "Numero", "Email", "Orden"]
+  const fields = ["Nombre", "Numero", "Email", "Orden"];
   const forms = document.forms["crearPedido"];
   for (let i = 0; i < fields.length; i++) {
     if (forms[i].value === "") {
@@ -20,7 +20,7 @@ function enviar() {
 
 
     // Obtener entradas
-    const fields = ["Nombre", "Numero", "Email", "Orden", "Aclaraciones"]
+    const fields = ["Nombre", "Numero", "Email", "Orden", "Aclaraciones"];
     let ruta = "";
     for (let index = 0; index < fields.length; index++) {
         if (index > 0) {
