@@ -53,6 +53,8 @@ const menus = [
     },
 ]
 
+var menus_json;
+
 function CreateEntry(nombre, descripcion, precio) {
     return "<h1><b>" + nombre + "</b> <span class=\"w3-right w3-tag w3-dark-grey w3-round\">" + precio + "</span></h1><p class=\"w3-text-grey\">"
             + descripcion + "</p><hr>";
@@ -84,7 +86,31 @@ function openMenu(evt, menuName) {
     evt.currentTarget.firstElementChild.className += " w3-red";
 }
 
+function GetMenus() {
+    let ruta = "";
+    $.ajax(
+        {
+            url: 'php/ListaMenus.php',
+            type: 'POST',
+            data: ruta,
+        }
+    ).done(function(res) {
+            alert(res);
+            menus_json = JSON.parse(res);
+            alert(res);
+            alert(menus_json.length)
+        }
+    ).fail(function() {
+            console.log("No se pudo acceder la informacion");
+        }
+    ).always(function() {
+            console.log("Se accedio a la informacion correctamente");
+        }
+    )
+}
+
 window.onload = function() {
-  CrearMenus();
-  document.getElementById("myLink").click();  
+    GetMenus();
+    CrearMenus();
+    document.getElementById("myLink").click();  
 };
