@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/general.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../javascript/VerPlatillo.js"></script>
-    <title>Lista Platillos</title>
+    <script src="../javascript/EditarPlatillo.js"></script>
+    <title>Editar Platillo</title>
 </head>
 <body>
     <header class="w3-display-container w3-black w3-teal w3-responsive" style="height: 120px;">
@@ -36,26 +36,42 @@
 
     <main>
         <div class="w3-container w3-padding-64 w3-sand w3-grayscale-min w3-xlarge">
-            <div class="w3-container w3-center w3-padding-16 w3-sand">
-                <h1 class="w3-jumbo">Lista de Platillos</h1>
+        <div class="w3-content">
+            <div class="w3-container w3-teal w3-center" >
+                <h2>Editar Platillo</h2>
             </div>
-            <div class="w3-responsive w3-padding-64">
-                <table class="w3-table w3-bordered w3-xlarge w3-hoverable w3-centered w3-sand">
-                    <thead>
-                        <tr class="w3-black"> 
-                            <th>Id</th>
-                            <th>Dia</th>
-                            <th>Nombre</th>
-                            <th>Descripcion</th>
-                            <th>Precio</th>
-                            <th>Image path</th>
-                            <th>Visible</th>
-                        </tr>
-                    </thead>
-                    <tbody id="TableContentPlatillos">
-                    </tbody>
-                </table>
-            </div>
+            <form name="editarPlatillo" id="editarPlatillo" class="w3-container w3-card-4">
+                <p>
+                    <label for="id_platillo"> <strong>Ingrese Id:</strong> </label>
+                    <input class="w3-input w3-border" type="number" id="id_platillo" placeholder="4" required name="id_platillo">
+                </p>
+                <hr>
+                <hr>
+                <hr>
+                <p class="w3-container w3-center">
+                    <input class="w3-radio" type="radio" name="dia" value="5" checked>
+                    <label>Viernes</label>
+
+                    <input class="w3-radio w3-margin-left" type="radio" name="dia" value="6">
+                    <label>Sabado</label>
+                </p>
+                <p>
+                    <label for="nombre"> <strong>Nombre:</strong> </label>
+                    <input class="w3-input w3-border" type="text" id="nombre" placeholder="nombre" required name="nombre">
+                </p>
+                <p>
+                    <label for="descripcion"> <strong>Descripcion:</strong> </label>
+                    <input class="w3-input w3-border" type="text" id="descripcion" placeholder="descripcion" required name="descripcion">
+                </p>
+                <p>
+                    <label for="precio"> <strong>Precio:</strong> </label>
+                    <input class="w3-input w3-border" type="number" id="precio" placeholder="$100.00" required name="precio">
+                </p>
+                <p>
+                    <button type="button" id="boton" class="w3-btn w3-padding w3-teal w3-block"> <strong>Editar!</strong></button>
+                </p>
+            </form>
+        </div>
         </div>
     </main>
 
