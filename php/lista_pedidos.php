@@ -27,10 +27,8 @@
     
     <nav class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off w3-top" id="myNavbar">
         <a href="lista_pedidos.php" class="w3-bar-item w3-button w3-mobile">LISTA DE PEDIDOS</a>
-        <a href="ver_platillos.php" class="w3-bar-item w3-button w3-mobile">LISTA PLATILLOS</a>
-        <a href="crear_platillos.php" class="w3-bar-item w3-button w3-mobile">CREAR PLATILLO</a>
-        <a href="editar_platillo.php" class="w3-bar-item w3-button w3-mobile">EDITAR PLATILLO</a>
-        <a href="borrar_platillo.php" class="w3-bar-item w3-button w3-mobile">ELIMINAR PLATILLO</a>
+        <a href="modificar_platillos.php" class="w3-bar-item w3-button w3-mobile">MODIFICAR PLATILLO</a>
+        <a href="crear_platillo.php" class="w3-bar-item w3-button w3-mobile">CREAR PLATILLO</a>
         <a href="logout.php" class="w3-bar-item w3-button w3-mobile w3-right">LOGOUT</a>
     </nav>
 

@@ -1,5 +1,9 @@
 <?php
-
+session_start();
+// Si no hay sesion iniciada regresar al login.
+if(empty($_SESSION['login_user'])) {
+	header('Location: login.php');
+}
 include('ConsultaBD.php');
 
 
@@ -9,13 +13,14 @@ $fileSize = $_FILES["imagen"]["size"];
 
 
 $id = $_GET['id'];
+$dia = $_POST['dia'];
 $nombre = $_POST['nombre'];
 $descripcion = $_POST['descripcion'];
-$ingredientes = $_POST['ingredientes'];
+$precio = $_POST['precio'];
+$visible = $_POST['visible'];
 
-if ($fileSize == 0 )
-{
-    $sql = "UPDATE platillos SET nombre = \"$nombre\", descripcion = \"$descripcion\", ingredientes = \"$ingredientes\" WHERE id = $id;";
+if ($fileSize == 0 ) {
+    $sql = "UPDATE platillos SET day = $dia, nombre = \"$nombre\", descripcion = \"$descripcion\", precio = $precio, visible = $visible WHERE id = $id;";
 }
 
 else
@@ -39,7 +44,7 @@ else
 
 	if(is_uploaded_file($_FILES["imagen"]["tmp_name"])) {
 		if(!move_uploaded_file($_FILES["imagen"]["tmp_name"], $upFile)) {
-			echo "Problem could not move file to destination. Please check again later. <a href=\"../index.php\">Please go back.</a>";
+			echo "Problem could not move file to destination. Please check again later. <a href=\"modificar_platillos.php\">Please go back.</a>";
 			exit;
 		}
 	} else {
@@ -50,7 +55,7 @@ else
 
 	$platillo_image = $upFile;
     $upFile = substr($platillo_image, 3);
-    $sql = "UPDATE platillos SET nombre = \"$nombre\", descripcion = \"$descripcion\", ingredientes = \"$ingredientes\", imagen_path = \"$upFile\" WHERE id = $id;";
+    $sql = "UPDATE platillos SET day = $dia, nombre = \"$nombre\", descripcion = \"$descripcion\", precio = $precio, visible = $visible, imagen_path = \"$upFile\" WHERE id = $id;";
     $old_image = mysqli_fetch_array(consultaBD("SELECT imagen_path FROM platillos WHERE id = '$id'"))['imagen_path'];
     $old_image = "../".$old_image;
     if (!unlink($old_image)) { 
@@ -67,5 +72,5 @@ else
 consultaBD($sql);
 echo "Cambio realizado";
 echo($sql);
-
+header("location:modificar_platillos.php"); // redirects to all records page
 ?>
