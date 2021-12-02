@@ -22,7 +22,7 @@
 <body>
     <header class="w3-display-container w3-black w3-teal w3-responsive" style="height: 120px;">
             <h1 class="w3-display-middle">Cocina de Allison Thompson</h1>
-            <img class="w3-display-right" src="img/logo.png" alt="logo" width="60" height="60">
+            <img class="w3-display-right" src="../img/logo.png" alt="logo" width="60" height="60">
     </header>
     <nav class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off w3-top" id="myNavbar">
         <a href="lista_pedidos.php" class="w3-bar-item w3-button w3-mobile">LISTA DE PEDIDOS</a>
