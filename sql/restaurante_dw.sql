@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2021 at 11:51 PM
+-- Generation Time: Dec 02, 2021 at 01:47 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -73,11 +73,11 @@ CREATE TABLE `platillos` (
 --
 
 INSERT INTO `platillos` (`id`, `day`, `nombre`, `descripcion`, `precio`, `imagen_path`, `visible`) VALUES
-(13, 5, 'Pizza', '12', 140, 'uploads/2021_12_01_23_29_19pizza_peperonni.jpg', 1),
+(13, 5, 'PIZZA DE PEPERONNI', 'Pizza de 12 pulgadas con queso mozzarella y peperonni.', 140, 'uploads/2021_12_01_23_29_19pizza_peperonni.jpg', 1),
 (14, 5, 'PIZZA HAWAIANA', 'Pizza de 12 pulgadas con queso mozzarella, piña y jamon.', 150, 'uploads/2021_12_01_23_43_47PIZZA_HAWAINA.jpg', 1),
 (16, 5, 'PIZZA SUPREMA', 'Pizza de 12 pulgadas con queso mozzarella, peperonni, cebolla, pimiento verde y tomate', 170, 'uploads/2021_12_01_23_45_33PIZZA_SUPREMA.jpg', 1),
-(17, 6, 'POLLO EN SALSA DE jalapeño', 'POLLO EN SALSA DE jalapeño Y BACON SERVIDO CON ARROZ PILAF Y ENSALADA DE VEGETALES', 190, 'uploads/2021_12_01_23_48_04Pollo_salsa_jalapeno.jpg', 1),
-(18, 6, 'sopa de caracol', 'suave y delicioso caracol preparado en cremosa y exquisita sopa, arroz blanco', 220, 'uploads/2021_12_01_23_49_50SOPA_CARACOL.jpg', 1);
+(17, 6, 'POLLO EN SALSA DE JALAPEÑO', 'Pollo en salsa de jalapeño y bacon servido con arroz pilaf y ensalada de vegetales', 190, 'uploads/2021_12_01_23_48_04Pollo_salsa_jalapeno.jpg', 1),
+(18, 6, 'SOPA DE CARACOL', 'Suave y delicioso caracol preparado en cremosa y exquisita sopa con arroz blanco', 220, 'uploads/2021_12_01_23_49_50SOPA_CARACOL.jpg', 1);
 
 -- --------------------------------------------------------
 

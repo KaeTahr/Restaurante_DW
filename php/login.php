@@ -10,8 +10,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+    </style>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/general.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,7 +27,6 @@
     
     <nav class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off w3-top" id="myNavbar">
         <a href="../index.html" class="w3-bar-item w3-button w3-mobile">INICIO</a>
-        <a href="../menu_dia.html" class="w3-bar-item w3-button w3-mobile">MENU DEL DIA</a>
         <a href="../menu_semana.html" class="w3-bar-item w3-button w3-mobile">MENU DE LA SEMANA</a>
         <a href="../crear_pedido.html" class="w3-bar-item w3-button w3-mobile">CREAR PEDIDO</a>
         <a href="login.php" class="w3-bar-item w3-button w3-mobile w3-right">LOGIN</a>
