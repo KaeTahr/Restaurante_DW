@@ -1,74 +1,16 @@
-const menus = [
-    {
-        "nombre" : "Viernes",
-        "dia" : 5, // Viernes
-        "platillos" : [
-            {
-                nombre: "PIZZA DE PEPERONNI",
-                precio: "$140.00",
-                descripcion: "Pizza de 12 pulgadas con queso mozzarella y peperonni."
-            },
-            {
-                nombre: "PIZZA DE JAMON",
-                precio: "$140.00",
-                descripcion: "Pizza de 12 pulgadas con queso mozzarella y jamon."
-            },
-            {
-                nombre: "PIZZA DE BACON JALAPEÑO",
-                precio: "$140.00",
-                descripcion: "Pizza de 12 pulgadas con queso mozzarella, jalaño y tocino."
-            },
-            {
-                nombre: "PIZZA DE BACON JALAPEÑO",
-                precio: "$140.00",
-                descripcion: "Pizza de 12 pulgadas con queso mozzarella, jalaño y tocino."
-            },
-            {
-                nombre: "PIZZA HAWAIANA",
-                precio: "$150.00",
-                descripcion: "Pizza de 12 pulgadas con queso mozzarella, piña y jamon."
-            },
-            {
-                nombre: "PIZZA SUPREMA",
-                precio: "$170.00",
-                descripcion: "Pizza de 12 pulgadas con queso mozzarella, peperonni, cebolla, pimiento verde y tomate"
-            },
-        ]
-    },
-    {
-        "nombre" : "Sabado",
-        "dia" : 6, // Viernes
-        "platillos" : [
-            {
-                nombre: "HAMBURGUESA CON PAPAS",
-                precio: "$100.00",
-                descripcion: "Carne de res magra, cebolla en salsa de barbacoa, queso, tomate, lechuga y aderezo de la casa"
-            },
-            {
-                nombre: "ARROZ CON POLLO",
-                precio: "$170.00",
-                descripcion: "Delicioso arroz chino con pollo y vegetales para 2 personas"
-            },
-        ]
-    },
-]
-
-var menus_json;
-
-function CreateEntry(nombre, descripcion, precio) {
-    return "<h1><b>" + nombre + "</b> <span class=\"w3-right w3-tag w3-dark-grey w3-round\">" + precio + "</span></h1><p class=\"w3-text-grey\">"
-            + descripcion + "</p><hr>";
+function CreateEntry(nombre, descripcion, precio, imagen_path) {
+    return  "<div class=\"w3-row\">" 
+            + "<div class=\"w3-col s7\">" + "<h1><b>" + nombre + "</b></span></h1><p class=\"w3-text-grey\">" + descripcion + "</p></div>" 
+            + "<div class=\"w3-col s4 w3-center\">" + "<img src=\"" + imagen_path + "\" style=\"max-width:70%;\"></img>" + "</div>"
+            + "<div class=\"w3-col s1\">" + "<span class=\"w3-right w3-tag w3-dark-grey w3-round\">" + precio + "</span>" + "</div></div>"
+            + "<div class=\"w3-row\"> <div class=\"w3-col s12\"> <hr> </div></div>";
 }
-
-function CrearMenus() {
-    for (let index = 0; index < menus.length; index++) {
-        const element = menus[index];
-        const mod = document.getElementById(element.nombre);
-        mod.innerHTML = "";
-        for (let index2 = 0; index2 < element.platillos.length; index2++) {
-            const element2 = element.platillos[index2];
-            mod.innerHTML += CreateEntry(element2.nombre, element2.descripcion, element2.precio);
-        }
+//<img src="<?php echo  $Imagen_path[$n] ?>" style="max-width:15%;"></img>
+function GetDay(day){
+    if (day == 5){
+        return "Viernes";
+    } else{
+        return "Sabado";
     }
 }
 
@@ -95,10 +37,12 @@ function GetMenus() {
             data: ruta,
         }
     ).done(function(res) {
-            alert(res);
-            menus_json = JSON.parse(res);
-            alert(res);
-            alert(menus_json.length)
+            var menus_json = JSON.parse(res);
+            for (let index = 0; index < menus_json.length; index++) {
+                const element = menus_json[index];
+                const mod = document.getElementById(GetDay(element.day));
+                mod.innerHTML += CreateEntry(element.nombre, element.descripcion, element.precio, element.imagen_path);
+            }
         }
     ).fail(function() {
             console.log("No se pudo acceder la informacion");
@@ -111,6 +55,5 @@ function GetMenus() {
 
 window.onload = function() {
     GetMenus();
-    CrearMenus();
     document.getElementById("myLink").click();  
 };

@@ -5,7 +5,6 @@
         header('Location: login.php');
     }
     include('ConsultaBD.php');
-
     $id = $_GET['id']; // get id through query string
 ?>
 <html lang="es">
@@ -47,29 +46,29 @@
                     $imagen = $data['imagen_path'];
                 ?>
                 <p>
-                    <select class="w3-select" name="dia" value = <?php echo $dia ?> required>
-                        <option value="" disabled selected>Escoge el dia</option>
-                        <option value="5">Viernes</option>
-                        <option value="6">Sabado</option>
+                    <select class="w3-select" name="dia" required>
+                        <option value="" disabled>Escoge el dia</option>
+                        <option value="5" <?php if($dia == 5) { echo "selected";} ?>>Viernes</option>
+                        <option value="6" <?php if($dia == 6) { echo "selected";} ?>>Sabado</option>
                     </select>
                 </p>
                 <p>
                     <label for="nombre"> <strong>Nombre:</strong> </label>
-                    <input class="w3-input w3-border" type="text" id="nombre" value = <?php echo $nombre ?> required name="nombre" >
+                    <input class="w3-input w3-border" type="text" id="nombre" value ='<?php echo $nombre ?>' required name="nombre" >
                 </p>
                 <p>
                     <label for="descripcion"> <strong>Descripcion:</strong> </label>
-                    <input class="w3-input w3-border" type="text" id="descripcion" value = <?php echo $descripcion ?> required name="descripcion">
+                    <input class="w3-input w3-border" type="text" id="descripcion" value ='<?php echo $descripcion ?>' required name="descripcion">
                 </p>
                 <p>
                     <label for="precio"> <strong>Precio:</strong> </label>
-                    <input class="w3-input w3-border" type="number" id="precio" value = <?php echo $precio ?> required name="precio">
+                    <input class="w3-input w3-border" type="number" id="precio" value = '<?php echo     $precio ?>' required name="precio">
                 </p>
                 <p>
-                    <select class="w3-select" name="visible" value = <?php echo $visible ?> required>
+                    <select class="w3-select" name="visible" required>
                         <option value="" disabled selected>Es visible?</option>
-                        <option value="1">Si</option>
-                        <option value="0">No</option>
+                        <option value="1"<?php if($visible == 1) { echo "selected";} ?>>Si</option>
+                        <option value="0"<?php if($visible == 0) { echo "selected";} ?>>No</option>
                     </select>
                 </p>
                 <p>
